@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap avançado - Exercicio</title>
+    <link rel="stylesheet" href="./lib/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_css_bootstrap.min.css">
+    <style>
+        header{
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: #471733;
+        }
+
+        header h1{
+            color: #fff;
+        }
+
+        .container ul li a{
+            color: #fff;
+        }
+
+        body{
+            background-color: #5c4d56;
+        }
+        .carousel-item h2{
+            color: rgb(255, 0, 0);
+        }
+
+        #destaque h2, h3{
+            color: #fff;
+            font-weight: bold;
+        }
+        #destaque h2{
+            text-align: center;
+        }
+
+        #destaque p{
+            color: #fff;
+            text-align: justify;
+        }
+
+
+        .conteudo{
+            display: grid;
+        }
+
+        .noticias {
+    display: grid;
+    grid-template-columns: repeat(3, 32.6%);
+    column-gap: 1%;
+    row-gap: 5%;
+}
+
+
+@media screen and (max-width: 640px) {
+    .conteudo {
+        display: block;
+    }
+
+    .container {
+        max-width: 98%;
+    }
+    
+    .destaque .noticia a{
+        display: block;
+        font-size: 1.5em;
+    }
+    
+    .destaque .noticia img{
+        margin-right: 0;
+    }
+    .noticias {
+        display: block;
+    }
+
+    .noticias .noticia{
+        margin-bottom: 32px;
+    }
+
+    header .container{
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .container {
+        max-width: 98%;
+    }
+
+    .destaque .noticia a{
+        font-size: 1.5em;
+    }
+
+    .noticias {
+        grid-template-columns: repeat(2, 49%);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header id="cabecalho">
+        <div class="navbar navbar-expand-lg">
+            <div class="container">
+                <h1>Alugue Aqui</h1>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <nav class="collapse navbar-collapse justify-content-end" id="menu">
+                    <ul class="nav navbar-nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#destaque">Filmes</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="inicio">
+        <div id="exemplo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div data-bs-interval="3000" class="carousel-item active">
+                    <img height="500" class="d-block w-100" src="https://pipocamoderna.com.br/storage/2019/05/john_wick_three_3.jpg">
+                    <div class="carousel-caption">
+                        <h2>Jonh Wick 4</h2>
+                    </div>
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img height="500" class="d-block w-100" src="https://i2.wp.com/www.usc.edu.br/circulodigital/wp-content/uploads/2018/02/maldicaodacasawinchester_5.jpg">
+                    <div class="carousel-caption">
+                        <h2>A Maldição da casa Winchester</h2>
+                    </div>
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img height="500" class="d-block w-100" src="https://recantoadormecido.com.br/wp-content/uploads/2014/03/Blended-Official-Poster-Banner-PROMO-XXLG-21MARCO2014.jpg">
+                    <div class="carousel-caption">
+                        <h2>Juntos e Misturados</h2>
+                    </div>
+                </div>
+            </div>
+            <button data-bs-target="#exemplo" data-bs-slide="prev" class="carousel-control-prev" type="button">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button data-bs-target="#exemplo" data-bs-slide="next" class="carousel-control-next" type="button">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#exemplo" class="active" data-bs-slide-to="0"></button>
+                <button type="button" data-bs-target="#exemplo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#exemplo" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <section id="destaque">
+            <h2>Filmes em Alta</h2>
+            <div class="noticias">
+                <article class="card text-bg-dark">
+                    <header class="card-header">
+                        Filme em Alta
+                    </header>
+                    <img src="https://pipocamoderna.com.br/storage/2019/05/john_wick_three_3.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Jonh Wick 4</h4>
+                        <h5>
+                            Se você gosta de filme com muita ação, esse é o filme certo.
+                        </h5>
+                        <a href="#" class="btn btn-primary">Alugar Filme</a>
+                    </div>
+                    <footer>
+                        <div class="card-footer">
+                            Postado em: <time>15/04/2023 às 16:30</time>
+                        </div>
+                    </footer>
+                </article>
+                <article class="card text-bg-dark">
+                    <header class="card-header">
+                        Filme em Alta
+                    </header>
+                    <img src="https://i2.wp.com/www.usc.edu.br/circulodigital/wp-content/uploads/2018/02/maldicaodacasawinchester_5.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">A Maldição da Casa Winchester</h4>
+                        <h5>
+                            Se você gosta de filme com muito e Suspense e Terror, este é o filme certo.
+                        </h5>
+                        <a href="#" class="btn btn-primary">Alugar Filme</a>
+                    </div>
+                    <footer>
+                        <div class="card-footer">
+                            Postado em: <time>11/02/2022 às 22:45</time>
+                        </div>
+                    </footer>
+                </article>
+                <article class="card text-bg-dark">
+                    <header class="card-header">
+                        Filme em Alta
+                    </header>
+                    <img src="https://recantoadormecido.com.br/wp-content/uploads/2014/03/Blended-Official-Poster-Banner-PROMO-XXLG-21MARCO2014.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Juntos e Misturados</h4>
+                        <h5>Se você gosta do filme de comédia, no estilo adam sandler, este é o filme certo.</h5>
+                        <a href="#" class="btn btn-primary">Alugar Filme</a>
+                    </div>
+                    <footer>
+                        <div class="card-footer">
+                            Postado em: <time>18/04/2022 às 23:20</time>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script src="./lib/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
+</body>
+</html>
